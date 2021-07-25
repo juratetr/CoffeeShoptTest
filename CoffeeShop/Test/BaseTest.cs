@@ -17,6 +17,10 @@ namespace CoffeeShop.Test
         public static IWebDriver driver;
         public static CoffeeShopHomePage _coffeeShopHomePage;
         public static CoffeeShopCartPage _coffeeShopCartPage;
+        public static CoffeeShopLoginPage _coffeeShopLoginPage;
+        public static CoffeeShopOrderDeliveryOptionsPage _coffeeShopOrderDeliveryOptionsPage;
+        public static CoffeeShopDeliveryAddressPage _coffeeShopDeliveryAddressPage;
+
 
 
 
@@ -26,7 +30,10 @@ namespace CoffeeShop.Test
             driver = CustomDriver.GetChromeDriver();
             _coffeeShopHomePage = new CoffeeShopHomePage(driver);
             _coffeeShopCartPage = new CoffeeShopCartPage(driver);
-        }
+            _coffeeShopLoginPage = new CoffeeShopLoginPage(driver);
+            _coffeeShopOrderDeliveryOptionsPage = new CoffeeShopOrderDeliveryOptionsPage(driver);
+           _coffeeShopDeliveryAddressPage = new CoffeeShopDeliveryAddressPage(driver);
+    }
 
 
         [TearDown]

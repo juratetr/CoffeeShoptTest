@@ -60,6 +60,9 @@
     <Compile Include="Drivers\CustomDrivers.cs" />
     <Compile Include="Page\BasePage.cs" />
     <Compile Include="Page\CoffeeShopCartPage.cs" />
+    <Compile Include="Page\CoffeeShopDeliverAddressPage.cs" />
+    <Compile Include="Page\CoffeeShopLoginPage.cs" />
+    <Compile Include="Page\CoffeeShopOrderDeliveryOptionsPage.cs" />
     <Compile Include="Page\CoffeShopHomePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test\BaseTest.cs" />

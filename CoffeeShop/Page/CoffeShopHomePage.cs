@@ -70,7 +70,7 @@ namespace CoffeeShop.Page
         }
         public CoffeeShopHomePage CheckQuantity(string expectedQuantity)
         {
-            Assert.IsTrue(_CartQuantity.Text.Equals(expectedQuantity), $"Kiekis turėjo būti { expectedQuantity}, bet yra { _CartQuantity}");
+            Assert.IsTrue(_CartQuantity.Text.Equals(expectedQuantity), $"Kiekis turėjo būti { expectedQuantity}, bet yra { _CartQuantity.Text}");
             return this;
         }
 

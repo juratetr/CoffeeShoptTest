@@ -17,8 +17,8 @@ namespace CoffeeShop.Page
         private IWebElement _VirdulysBeemTeatimeQuantityInputField => Driver.FindElement(By.CssSelector("#product_543_0_0_0 > td.cart_quantity.text-center > input.cart_quantity_input.form-control.grey"));
         private IWebElement _NivonaNicr930quantityInputField => Driver.FindElement(By.CssSelector("#product_507_0_0_0 > td.cart_quantity.text-center > input.cart_quantity_input.form-control.grey"));
         private IWebElement _TotalPriceContainer => Driver.FindElement(By.Id("total_price"));
-        private IWebElement _DiscountCodeInputField => Driver.FindElement(By.Id("discount_name"));
-        private IWebElement _SubmitDiscountCodeButton => Driver.FindElement(By.CssSelector("#discount_name"));
+        private IWebElement _DiscountCodeInputField => Driver.FindElement(By.XPath("//*[@id='discount_name']"));
+        private IWebElement _SubmitDiscountCodeButton => Driver.FindElement(By.CssSelector("#voucher > fieldset > button"));
         private IWebElement _AlertMessageBox => Driver.FindElement(By.CssSelector("#center_column > div.alert.alert-danger"));
 
         public CoffeeShopCartPage(IWebDriver webdriver) : base(webdriver)
@@ -69,5 +69,7 @@ namespace CoffeeShop.Page
             Assert.True(result.Contains(expectedMessage), $"Pranešimas {expectedMessage} nepasirodė. {result}");
             return this;
         }
+
+       
     }
 }
