@@ -37,10 +37,10 @@ namespace CoffeeShop.Page
             _VirdulysBeemTeatimeQuantityInputField.SendKeys(guantity);
             return this;
         }
-        public CoffeeShopCartPage InsertNivonaNicr930Quantity(string guantity)
+        public CoffeeShopCartPage InsertNivonaNicr930Quantity(string quantity)
         {
             _NivonaNicr930quantityInputField.Clear();
-            _NivonaNicr930quantityInputField.SendKeys(guantity);
+            _NivonaNicr930quantityInputField.SendKeys(quantity);
             return this;
         }
         public CoffeeShopCartPage CheckTotalPrice(string expectedPrice)
