@@ -31,24 +31,28 @@ namespace CoffeeShop.Page
                 Driver.Url = PageAddress;
             return this;
         }
-        public CoffeeShopCartPage InsertVirdulysBeemTeatimeQuantity(string guantity)
+
+        public CoffeeShopCartPage InsertVirdulysBeemTeatimeQuantity(string quantity)
         {
             _VirdulysBeemTeatimeQuantityInputField.Clear();
-            _VirdulysBeemTeatimeQuantityInputField.SendKeys(guantity);
+            _VirdulysBeemTeatimeQuantityInputField.SendKeys(quantity);
             return this;
         }
+
         public CoffeeShopCartPage InsertNivonaNicr930Quantity(string quantity)
         {
             _NivonaNicr930quantityInputField.Clear();
             _NivonaNicr930quantityInputField.SendKeys(quantity);
             return this;
         }
+
         public CoffeeShopCartPage CheckTotalPrice(string expectedPrice)
         {
             string preparedSum = _TotalPriceContainer.Text.Replace(" ", "").TrimEnd('€');
             Assert.IsTrue(preparedSum.Contains(expectedPrice), $"Visa krepšelio kaina turėjo būti { expectedPrice + " Eur"} , bet yra { preparedSum + " Eur"}");
             return this;
         }
+
         public CoffeeShopCartPage Wait()
         {
             Thread.Sleep(2000);

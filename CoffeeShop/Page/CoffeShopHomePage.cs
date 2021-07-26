@@ -36,7 +36,7 @@ namespace CoffeeShop.Page
 
         public CoffeeShopHomePage CloseCookie()
         {
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
+          WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(5));
             wait.Until(d => _QookieX.Displayed);
             _QookieX.Click();
             return this;
@@ -51,6 +51,7 @@ namespace CoffeeShop.Page
             _ContinueShoppingFromBeemVirdulysTeaTime.Click();
             return this;
         }
+
         public CoffeeShopHomePage AddToCartBeemMokaKavinukas()
         {
             Actions action = new Actions(Driver);

@@ -14,10 +14,10 @@ namespace CoffeeShop.Test
         public void AddProductToCartFromHomepageandFromQuickViewWindow()
         {
             _coffeeShopHomePage.NavigateToDefaultPage()
-                 .CloseCookie()
-                 .AddToCartBeemVirdulysTeaTime()
-                 .AddToCartBeemMokaKavinukas()
-                 .CheckQuantity("3");
+                               .CloseCookie()
+                               .AddToCartBeemVirdulysTeaTime()
+                               .AddToCartBeemMokaKavinukas()
+                               .CheckQuantity("3");
         }
 
         [Order(1)]
@@ -32,8 +32,7 @@ namespace CoffeeShop.Test
                                .Wait()
                                .CheckTotalPrice(expectedPrice);              
         }
-
-         
+                 
         [Order(2)]
         [Test]
          public void AddInvalidDiscountCode()
@@ -54,10 +53,10 @@ namespace CoffeeShop.Test
         public void LoginWithInvalidCredentials(string email, string password, string expectedMessage)
         {
             _coffeeShopLoginPage.NavigateToDefaultPage()
-                .InsertEmail(email)
-                .InsertPassword(password)
-                .SubmitLogin()
-                .CheckLoginWithInvalidCredentialsResult(expectedMessage);
+                                .InsertEmail(email)
+                                .InsertPassword(password)
+                                .SubmitLogin()
+                                .CheckLoginWithInvalidCredentialsResult(expectedMessage);
         }
 
         [Order(4)]
@@ -72,7 +71,6 @@ namespace CoffeeShop.Test
 
         }
 
-
         [Order(5)]
         [Test]
         public void CheckAddress()
@@ -82,30 +80,28 @@ namespace CoffeeShop.Test
                 .CheckStreet("Saulės g. 99")
                 .CheckPostCode("12345 Vilnius")
                 .CheckCountry("Lithuania")
-                .CheckPhone("865562942");
-        }
-           
-
+                .CheckPhone("865562942")
+                .GoToPayment();
+        }         
+             
         [Order(6)]
-        [Test]
-        public void OpenTermsOfServiceWindow()
-        {
-            _coffeeShopOrderDeliveryOptionsPage.NavigateToDefaultPage()
-                .OpenTermsAndConditionsWindow()
-                .CheckIfOpenedTermsAndConditionsWindow("Apmokėjimas")
-                .CloseTermsAndConditionsWindow();
-        }
-
-
-        [Order(7)]
         [Test]
         public void PurchaseWithoutTheAgreementOfTermsAndConditions()
         {
             _coffeeShopOrderDeliveryOptionsPage.NavigateToDefaultPage()
                 .DeselectCheckBox()
                 .GoToPayment()
-                .CheckIfOpenedErrorMessage("Prieš tęsdami turite sutikti su paslaugų teikimo sąlygomis")
+                .CheckForErrorMessage("Prieš tęsdami turite sutikti su paslaugų teikimo sąlygomis")
                 .CloseErrorMessage();
+        }
+
+        [Order(7)]
+        public void PurchaseWithTheAgreementOfTermsAndConditions()
+        {
+            _coffeeShopOrderDeliveryOptionsPage.NavigateToDefaultPage()
+                .SelectCheckBox()
+                .GoToPayment()
+                .CheckIfThereIsNoErrorMessage();
         }
         
        

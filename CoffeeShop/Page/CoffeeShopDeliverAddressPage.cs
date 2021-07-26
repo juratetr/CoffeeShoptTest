@@ -17,6 +17,7 @@ namespace CoffeeShop.Page
         private IWebElement _AddressPostCodeCity => Driver.FindElement(By.CssSelector("#address_delivery > li.address_postcode.city"));
         private IWebElement _AddressCountry => Driver.FindElement(By.XPath("//*[@id='address_delivery']/li[5]"));
         private IWebElement _AddressPhone => Driver.FindElement(By.XPath("//*[@id='address_delivery']/li[6]"));
+        private IWebElement _GoToPaymentButton => Driver.FindElement(By.CssSelector("#center_column > form > p > button"));
 
         public CoffeeShopDeliveryAddressPage(IWebDriver webdriver) : base(webdriver)
         {
@@ -30,31 +31,39 @@ namespace CoffeeShop.Page
         }
 
         public CoffeeShopDeliveryAddressPage CheckName(string expectedName)
-        
         {
             Assert.IsTrue(_AddressName.Text.Contains(expectedName), $"Tekstas turėjo būti { expectedName}, bet yra { _AddressName.Text}");                                 
             return this;
         }
+
         public CoffeeShopDeliveryAddressPage CheckStreet(string expectedStreet)
         {
             Assert.IsTrue(_AddressStreet.Text.Contains(expectedStreet), $"Tekstas turėjo būti { expectedStreet}, bet yra { _AddressStreet.Text}");
             return this;
         }
+
         public CoffeeShopDeliveryAddressPage CheckPostCode(string postCodeCity)
         {
             Assert.IsTrue(_AddressPostCodeCity.Text.Contains(postCodeCity), $"Tekstas turėjo būti { postCodeCity}, bet yra { _AddressPostCodeCity.Text}");
             return this;
         }
+
         public CoffeeShopDeliveryAddressPage CheckCountry(string expectedCountry)
         {
             Assert.IsTrue(_AddressCountry.Text.Contains(expectedCountry), $"Tekstas turėjo būti { expectedCountry}, bet yra { _AddressCountry.Text}");
             return this;
         }
+
         public CoffeeShopDeliveryAddressPage CheckPhone(string expectedPhone)
         {
             Assert.IsTrue(_AddressPhone.Text.Contains(expectedPhone), $"Tekstas turėjo būti { expectedPhone}, bet yra { _AddressPhone.Text}");
             return this;
         }
 
+        public CoffeeShopDeliveryAddressPage GoToPayment()
+        {
+            _GoToPaymentButton.Click();
+            return this;
+        }
     }
 }
