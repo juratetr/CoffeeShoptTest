@@ -16,7 +16,7 @@ namespace CoffeeShop.Test
             _coffeeShopHomePage.NavigateToDefaultPage()
                                .CloseCookie()
                                .AddToCartBeemVirdulysTeaTime()
-                               .AddToCartBeemMokaKavinukas()
+                               .AddToCartNivonaNicr930()
                                .CheckQuantity("3");
         }
 
@@ -48,7 +48,7 @@ namespace CoffeeShop.Test
         [TestCase("", "xSPrFkuu", "Reikalingas el. pašto adresas.", TestName = "Prisijungimas paliekant tuščią el.p. lauką")]
         [TestCase("jurategil@gmail.com", "abcd", "Neteisingas slaptažodis.", TestName = "Prisijungimas su blogu slaptažodžiu.")]
         [TestCase("jurategil@gmail.com", "", "Būtinas slaptažodis.", TestName = "Prisijungimas paliekant tuščią slaptažodžio lauką")]
-        [TestCase("", "", "Reikalingas el. pašto adresas.", TestName = "Prisijungimas paliekant tuščius el.p ir slaptažodžio laukus")]
+        [TestCase("", "", "Reikalingas el. pašto adresas.", TestName = "Prisijungimas paliekant tuščius el.p. ir slaptažodžio laukus")]
         
         public void LoginWithInvalidCredentials(string email, string password, string expectedMessage)
         {

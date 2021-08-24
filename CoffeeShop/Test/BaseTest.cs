@@ -47,7 +47,7 @@ namespace CoffeeShop.Test
 
         public static void TearDown()
         {
-            // driver.Quit(); 
+            driver.Quit(); 
         }
     }
 }
