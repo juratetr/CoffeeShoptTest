@@ -12,9 +12,9 @@ namespace CoffeeShop.Page
     {
         private const string PageAddress = "https://coffeeshop.lt";
         private IWebElement _QookieX => Driver.FindElement(By.CssSelector("#cookieNoticeContent > table > tbody > tr:nth-child(2) > td > span"));
-        private IWebElement _ThumbnailBeemVirdulysTeaTime => Driver.FindElement(By.CssSelector("#blockspecials > li:nth-child(13) > div"));
-        private IWebElement _AddToCartBeemVirdulysTeaTimeButton => Driver.FindElement(By.CssSelector(".ajax_block_product:nth-child(13) .button:nth-child(1) > span"));
-        private IWebElement _ContinueShoppingFromBeemVirdulysTeaTime => Driver.FindElement(By.CssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > span"));
+        private IWebElement _ThumbnailKavamaleNivonaCafeGranoNICG130 => Driver.FindElement(By.CssSelector("#blockspecials > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.first-in-line.last-item-of-tablet-line.first-item-of-mobile-line"));
+        private IWebElement _AddToCartKavamaleNivonaCafeGranoNICG130Button => Driver.FindElement(By.CssSelector("#blockspecials > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.first-in-line.last-item-of-tablet-line.first-item-of-mobile-line > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default"));
+        private IWebElement _ContinueShoppingFromKavamaleNivonaCafeGranoNICG130 => Driver.FindElement(By.CssSelector("#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > span"));
         private IWebElement _SpecialOffersBlock => Driver.FindElement(By.CssSelector("#home-page-tabs > li:nth-child(1) > a"));
         private IWebElement _ThumbnailNivonaNicr930 => Driver.FindElement(By.CssSelector("#blockspecials > li:nth-child(1) > div"));
         private IWebElement _QuickViewNivonaNicr930 => Driver.FindElement(By.CssSelector("#blockspecials > li:nth-child(1) > div > div.left-block > div > a.quick-view > span"));
@@ -42,16 +42,16 @@ namespace CoffeeShop.Page
             return this;
         }
 
-        public CoffeeShopHomePage AddToCartBeemVirdulysTeaTime()
+        public CoffeeShopHomePage AddToCartKavamaleNivonaCafeGranoNICG130()
         {
             Actions action = new Actions(Driver);
             action.MoveToElement(_SpecialOffersBlock);
             action.Build().Perform();
             _SpecialOffersBlock.Click();
-            action.MoveToElement(_ThumbnailBeemVirdulysTeaTime);
+            action.MoveToElement(_ThumbnailKavamaleNivonaCafeGranoNICG130);
             action.Build().Perform();
-            _AddToCartBeemVirdulysTeaTimeButton.Click();
-            _ContinueShoppingFromBeemVirdulysTeaTime.Click();
+            _AddToCartKavamaleNivonaCafeGranoNICG130Button.Click();
+            _ContinueShoppingFromKavamaleNivonaCafeGranoNICG130.Click();
             return this;
         }
 

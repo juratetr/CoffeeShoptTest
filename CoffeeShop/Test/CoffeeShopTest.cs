@@ -15,19 +15,19 @@ namespace CoffeeShop.Test
         {
             _coffeeShopHomePage.NavigateToDefaultPage()
                                .CloseCookie()
-                               .AddToCartBeemVirdulysTeaTime()
+                               .AddToCartKavamaleNivonaCafeGranoNICG130()
                                .AddToCartNivonaNicr930()
                                .CheckQuantity("3");
         }
 
         [Order(1)]
-        [TestCase("5", "3", "3521,96", TestName = "5 virduliai + 2 kavos aparatai = 3 521,96 Eur")]
-        [TestCase("1", "1", "1139,99", TestName = "1 virdulys + 1 kavos aparatas = 1139,99 Eur")]
-        [TestCase("-1", "1", "1139,99", TestName = "1 virdulys + 1 kavos aparatas = 1139,99 Eur")]
+        [TestCase("5", "3", "3692,00", TestName = "5 kavamalės + 2 kavos aparatai = 3692,00 Eur")]
+        [TestCase("1", "1", "1174,00", TestName = "1 kavamalė + 1 kavos aparatas = 1174,00 Eur")]
+        [TestCase("-1", "1", "1174,00", TestName = "1 kavamalė + 1 kavos aparatas = 1174,00 Eur")]
         public void TotalPriceTest(string quantity1, string quantity2, string expectedPrice)
         {
             _coffeeShopCartPage.NavigateToDefaultPage()
-                               .InsertVirdulysBeemTeatimeQuantity(quantity1)
+                               .InsertKavamaleNivonaCafeGranoNICG130Quantity(quantity1)
                                .InsertNivonaNicr930Quantity(quantity2)
                                .Wait()
                                .CheckTotalPrice(expectedPrice);              

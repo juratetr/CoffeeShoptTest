@@ -14,7 +14,7 @@ namespace CoffeeShop.Page
     public class CoffeeShopCartPage : BasePage
     {
         private const string PageAddress = "https://coffeeshop.lt/index.php?controller=order";
-        private IWebElement _VirdulysBeemTeatimeQuantityInputField => Driver.FindElement(By.CssSelector("#product_543_0_0_0 > td.cart_quantity.text-center > input.cart_quantity_input.form-control.grey"));
+        private IWebElement _KavamaleNivonaCafeGranoNICG130QuantityInputField => Driver.FindElement(By.CssSelector("#product_351_0_0_0 > td.cart_quantity.text-center > input.cart_quantity_input.form-control.grey"));
         private IWebElement _NivonaNicr930quantityInputField => Driver.FindElement(By.CssSelector("#product_507_0_0_0 > td.cart_quantity.text-center > input.cart_quantity_input.form-control.grey"));
         private IWebElement _TotalPriceContainer => Driver.FindElement(By.Id("total_price"));
         private IWebElement _DiscountCodeInputField => Driver.FindElement(By.XPath("//*[@id='discount_name']"));
@@ -32,10 +32,10 @@ namespace CoffeeShop.Page
             return this;
         }
 
-        public CoffeeShopCartPage InsertVirdulysBeemTeatimeQuantity(string quantity)
+        public CoffeeShopCartPage InsertKavamaleNivonaCafeGranoNICG130Quantity(string quantity)
         {
-            _VirdulysBeemTeatimeQuantityInputField.Clear();
-            _VirdulysBeemTeatimeQuantityInputField.SendKeys(quantity);
+            _KavamaleNivonaCafeGranoNICG130QuantityInputField.Clear();
+            _KavamaleNivonaCafeGranoNICG130QuantityInputField.SendKeys(quantity);
             return this;
         }
 
